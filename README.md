@@ -1,14 +1,22 @@
-# PROJECT NAME
+# Tutoring Management System
 
 ## Project Description
 
-Here goes your awesome project description!
+Tutoring Management System, or TMS,  is a full-stack single-page application that allows students to schedule tutoring sessions with tutors. Tutors and students can view their sessions. Managers can view session analytics such as demand for a specific tutor or course or how frequently a student is tutored. Users can utilize a calendar for viewing and creating events.
 
 ## Technologies Used
 
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+* Spring Boot
+* PostgreSQL
+* Java
+* Angular
+* Typescript
+* HTML
+* CSS
+* JUnit5
+* Selenium
+* Cucumber
+* Postman
 
 ## Features
 
