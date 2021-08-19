@@ -1,0 +1,65 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Tutoring Summary</div>
+    <div class="page__content shadow p-3 position-relative" style="font-size: 1rem;">
+      <div class="page__content-data position-absolute">
+        <h2>{{this.user.firstName + ' ' + this.user.lastName + "'s " + this.user.accountType.type}}  Profile</h2>
+        
+        <!-- Basic Profile Info-->
+        <div class="row">
+          <div class="col-sm-3">
+            <label class="form-label" for="first_name">First Name</label>
+            <input type="text" class="form-control" aria-label="First Name" 
+              value={{this.user.firstName}} id="first_name">
+          </div>
+          <div class="col-sm-3">
+            <label class="form-label" for="last_name">Last Name</label>
+            <input type="text" class="form-control" aria-label="Last Name" 
+              value={{this.user.lastName}} id="last_name">
+          </div>
+          <div class="col-sm-3">
+            <label class="form-label" for="account-type">Role</label>
+            <input type="text" class="form-control" aria-label="Role" 
+              value={{this.user.accountType.type}} id="account-type">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <label class="form-label" for="email">Email</label>
+            <input type="text" class="form-control" aria-label="Username" 
+              value={{this.user.schoolEmail}}@tutors4u.edu id="email">
+          </div>
+          <div class="col-sm-4">
+            <label class="form-label" for="phone_number">Phone Number</label>
+            <input type="text" class="form-control" aria-label="Phone Number" 
+              value={{this.user.phoneNumber}} id="phone_number">
+          </div>
+          
+        </div>
+
+        <!-- Employee Schedule -->
+        <div *ngIf="isEmployee()" class="row my-5">
+          <!-- TODO: Control for pending and editing schedules. Planned goal. -->
+          <h2 class="u">Schedule</h2>
+          <table class="table table-border text-center">
+            <thead class="thead">
+              <th scope="col" class="col-2">-</th>
+              <th scope="col"
+                  *ngFor="let workday of this.schedule">{{workday.day}}</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>In:</td>
+                <td *ngFor="let workday of this.schedule">{{workday.inTime}}</td>
+              </tr>
+              <tr>
+                <td>Out:</td>
+                <td *ngFor="let workday of this.schedule">{{workday.outTime}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
